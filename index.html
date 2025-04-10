@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
@@ -16,55 +16,58 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
         }
 
         main {
             padding: 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .upload-container {
+        .section {
             background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
         }
 
         h2 {
-            text-align: center;
             color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
         }
 
         label {
             font-size: 16px;
-            margin-bottom: 10px;
-            display: block;
             color: #555;
+            display: block;
+            margin-bottom: 5px;
         }
 
         input[type="file"] {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin: 8px 0;
         }
 
         button {
+            width: 100%;
+            padding: 12px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            width: 100%;
         }
 
         button:hover {
@@ -75,10 +78,14 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -89,12 +96,27 @@
     </header>
 
     <main>
-        <div class="upload-container">
-            <h2>Formulario para Subir Archivos</h2>
+        <!-- Sección para Tareas Prácticas -->
+        <div class="section">
+            <h2>Tareas Prácticas</h2>
             <form action="/ruta-de-subida" method="POST" enctype="multipart/form-data">
-                <label for="fileUpload">Selecciona una imagen o documento</label>
-                <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png, .pdf, .docx, .pptx">
-                <button type="submit">Subir Archivo</button>
+                <div class="form-group">
+                    <label for="fileUploadPractical">Selecciona una imagen o documento práctico (Ej. .jpg, .pdf, .xlsx)</label>
+                    <input type="file" id="fileUploadPractical" name="fileUploadPractical" accept=".jpg, .jpeg, .png, .pdf, .xlsx, .docx, .zip">
+                </div>
+                <button type="submit">Subir Tarea Práctica</button>
+            </form>
+        </div>
+
+        <!-- Sección para Tareas Teóricas -->
+        <div class="section">
+            <h2>Tareas Teóricas</h2>
+            <form action="/ruta-de-subida" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fileUploadTheory">Selecciona un archivo teórico (Ej. .pdf, .docx, .pptx)</label>
+                    <input type="file" id="fileUploadTheory" name="fileUploadTheory" accept=".pdf, .docx, .pptx, .txt">
+                </div>
+                <button type="submit">Subir Tarea Teórica</button>
             </form>
         </div>
     </main>
