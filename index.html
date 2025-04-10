@@ -1,129 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Tareas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>Mis Trabajos - Sofía</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+      color: #4b2e83;
+    }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
+    header {
+      background-color: #f8c8dc;
+      padding: 30px;
+      text-align: center;
+      border-bottom: 4px solid #e09ec4;
+    }
 
-        main {
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
 
-        .section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 48%;
-        }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        h2 {
-            color: #333;
-            text-align: center;
-        }
+    h2 {
+      color: #c71585;
+      border-bottom: 2px dashed #e09ec4;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .trabajos-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        label {
-            font-size: 16px;
-            color: #555;
-            display: block;
-            margin-bottom: 5px;
-        }
+    .trabajo-box {
+      background-color: #ffe6f0;
+      border-radius: 15px;
+      padding: 20px;
+      flex: 1;
+      min-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        input[type="file"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin: 8px 0;
-        }
+    ul {
+      padding-left: 20px;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    li {
+      margin-bottom: 10px;
+    }
 
-        button:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .section {
-                width: 100%;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8c8dc;
+      color: #4b2e83;
+      font-size: 14px;
+      border-top: 4px solid #e09ec4;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sube tus Tareas</h1>
-    </header>
+  <header>
+    <h1>Mis Trabajos - Sofía</h1>
+    <p>Curso: Base de Datos 2</p>
+  </header>
 
-    <main>
-        <!-- Sección para Tareas Prácticas -->
-        <div class="section">
-            <h2>Tareas Prácticas</h2>
-            <form action="/ruta-de-subida" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="fileUploadPractical">Selecciona una imagen o documento práctico (Ej. .jpg, .pdf, .xlsx)</label>
-                    <input type="file" id="fileUploadPractical" name="fileUploadPractical" accept=".jpg, .jpeg, .png, .pdf, .xlsx, .docx, .zip">
-                </div>
-                <button type="submit">Subir Tarea Práctica</button>
-            </form>
-        </div>
+  <section>
+    <h2>Mis trabajos</h2>
+    <div class="trabajos-container">
+      <div class="trabajo-box">
+        <h3>Trabajos Prácticos</h3>
+        <ul>
+          <li><a href="TP1_Modelo_ER.pdf" target="_blank">TP1 - Modelo entidad relación</a></li>
+          <li><a href="TP2_Normalizacion.pdf" target="_blank">TP2 - Normalización</a></li>
+          <li><a href="TP3_SQL_Basico.pdf" target="_blank">TP3 - Consultas SQL Básicas</a></li>
+        </ul>
+      </div>
+      <div class="trabajo-box">
+        <h3>Trabajos Teóricos</h3>
+        <ul>
+          <li><a href="Ensayo_Transacciones.pdf" target="_blank">Ensayo sobre Transacciones</a></li>
+          <li><a href="Resumen_NoSQL.pdf" target="_blank">Resumen sobre Bases de Datos NoSQL</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <!-- Sección para Tareas Teóricas -->
-        <div class="section">
-            <h2>Tareas Teóricas</h2>
-            <form action="/ruta-de-subida" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="fileUploadTheory">Selecciona un archivo teórico (Ej. .pdf, .docx, .pptx)</label>
-                    <input type="file" id="fileUploadTheory" name="fileUploadTheory" accept=".pdf, .docx, .pptx, .txt">
-                </div>
-                <button type="submit">Subir Tarea Teórica</button>
-            </form>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Subida de Tareas - Todos los derechos reservados</p>
-    </footer>
+  <footer>
+    Página creada por Sofía | Base de Datos 2 - 2025
+  </footer>
 
 </body>
 </html>
+
